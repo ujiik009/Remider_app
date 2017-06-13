@@ -4,28 +4,32 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
-
+use App\RemiderTable;
 class RemiderController extends Controller
 {
     function home(){
-    	$remiders = DB::table('remider_table')->orderBy('id','desc')->where('isFinished',0)->get();
+    	//$remiders = DB::table('remider_table')->orderBy('id','desc')->where('isFinished',0)->get();
+        $remiders = RemiderTable::orderBy('id','desc')
+            ->where('isFinished',0)
+            ->get();
     	return view('home' ,['remiders' => $remiders]);
     }
 
     function addRemider(Request $request){
-        $body = $request->remider;     
-        DB::table('remider_table')->insert(
-            [
-                'body' => $body,
-                'isFinished' => 0,
-                'createUserId' => 1
-            ]
-        );
+        echo "<pre>";
+        $remider = new RemiderTable();
+        $remider->body = $request->remider;
+        $remider->isFinished = 0;
+        $remider->createUserId = 1; 
+        $remider->save();
         return back();
     }
 
     function deleteRemider(Request $request){
-        DB::table('remider_table')->where('id', $request->id)->update(['isFinished' => 1]);
+       
+        $Remider = RemiderTable::find($request->id);
+        $Remider->isFinished = 1;
+        $Remider->save();
         return back();
     }
     
