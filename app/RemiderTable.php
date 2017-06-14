@@ -10,3 +10,4 @@ class RemiderTable extends Model
     	public $primaryKey = "id";
    		public $timestamp = true;
 }
+

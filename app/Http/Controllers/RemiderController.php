@@ -8,15 +8,16 @@ use App\RemiderTable;
 class RemiderController extends Controller
 {
     function home(){
-    	//$remiders = DB::table('remider_table')->orderBy('id','desc')->where('isFinished',0)->get();
         $remiders = RemiderTable::orderBy('id','desc')
             ->where('isFinished',0)
             ->get();
+
+         $remiders = RemiderTable::get();
     	return view('home' ,['remiders' => $remiders]);
     }
 
     function addRemider(Request $request){
-        echo "<pre>";
+       
         $remider = new RemiderTable();
         $remider->body = $request->remider;
         $remider->isFinished = 0;
@@ -32,6 +33,5 @@ class RemiderController extends Controller
         $Remider->save();
         return back();
     }
-    
 }
 
