@@ -21,7 +21,8 @@ class RemiderController extends Controller
         $remider = new RemiderTable();
         $remider->body = $request->remider;
         $remider->isFinished = 0;
-        $remider->createUserId = 1; 
+        $remider->createUserId = 1;
+        $remider->remidertype = 1;
         $remider->save();
         return back();
     }

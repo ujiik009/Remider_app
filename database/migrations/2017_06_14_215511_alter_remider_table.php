@@ -14,9 +14,9 @@ class AlterRemiderTable extends Migration
     public function up()
     {
         Schema::table('remider_table', function (Blueprint $table) {
-            //
+            
             $table->integer('remidertype')->unsigned()->nullable();
-            $table->foreign('remidertype')->references('id')->on('remider_table');
+            $table->foreign('remidertype')->references('id')->on('remidertype');
         });
     }
 

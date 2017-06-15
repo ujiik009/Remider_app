@@ -10,8 +10,10 @@ class RemiderType extends Model
     public $primaryKey = "id";
    	public $timestamps = true;
 
-   	 public function remiders(){
-   	 	return $this->hasMany('App\RemiderTable','remidertype','id');
-   	// 	return 555;
-   	 }
+
+	 public function remiders(){
+
+	 	 return $this->hasMany(RemiderTable::class,'remidertype','id')->get();
+	 
+	 }
 }
