@@ -27,7 +27,8 @@ class RemiderController extends Controller
         return back();
     }
 
-    function deleteRemider(Request $request){$table->increments('id');
+    function deleteRemider(Request $request){
+        
        
         $Remider = RemiderTable::find($request->id);
         $Remider->isFinished = 1;
