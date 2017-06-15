@@ -8,6 +8,6 @@ class RemiderTable extends Model
 {
     	protected $table = "remider_table";
     	public $primaryKey = "id";
-   		public $timestamp = true;
+   		public $timestamps = true;
 }
 

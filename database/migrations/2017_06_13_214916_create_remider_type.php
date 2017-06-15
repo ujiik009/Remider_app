@@ -16,6 +16,7 @@ class CreateRemiderType extends Migration
         Schema::create('RemiderType', function (Blueprint $table) {
             $table->increments('id');
             $table->string('typeName');
+            $table->timestamps();
             
         });
     }
