@@ -11,8 +11,13 @@
 |
 */
 
-
-
+// home index
 Route::get('/', 'RemiderController@home');
+// page add remider type
+Route::get('/Remider_type', "RemiderController@showNewRemider");
+// call controller RemiderController @addRemider
 Route::post('/remider/new','RemiderController@addRemider');
+// call controller RemiderController @deleteRemider
 Route::delete('/remider/delete', 'RemiderController@deleteRemider');
+// call controller RemiderController @addRemiderType
+Route::post('/Remider_type/new','RemiderController@addRemiderType');
