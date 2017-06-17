@@ -3,9 +3,10 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Database\Eloquent\SoftDeletes;
 class RemiderTable extends Model
 {
+	use SoftDeletes;
 	protected $table = "remider_table";
 	public $primaryKey = "id";
 	public $timestamps = true;

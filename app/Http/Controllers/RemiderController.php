@@ -9,9 +9,8 @@ use App\RemiderType;
 class RemiderController extends Controller
 {
     function home(){
-        $remiders = RemiderTable::orderBy('id','desc')
-            ->where('isFinished',0)
-            ->get();
+        //$remiders = RemiderTable::orderBy('id','desc')->where('isFinished',0)->get();
+        $remiders = RemiderTable::orderBy('id','desc')->get();
         $types = RemiderType::get();
     	return view('home' ,['remiders' => $remiders,'types'=> $types]);
     }
@@ -31,10 +30,10 @@ class RemiderController extends Controller
         
        
         $Remider = RemiderTable::find($request->id);
-        $Remider->isFinished = 1;
-        $Remider->save();
+        // $Remider->isFinished = 1;
+        // $Remider->save();
         // or delete $Remider->delete();
-        //$Remider->delete();
+        $Remider->delete();
         return back();
     }
 }
