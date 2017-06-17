@@ -15,22 +15,7 @@ class RemiderController extends Controller
         $types = RemiderType::get();
     	return view('home' ,['remiders' => $remiders,'types'=> $types]);
     }
-
-    function showNewRemider(){
-        $types = RemiderType::get();
-        return view("NewRemiderType",['types'=>$types]);
-
-    }
-
-
-    function addRemiderType(Request $request){
-        $type = new RemiderType();
-        $type->typeName = $request->name;
-        $type->save();
-        return back();
-
-    }
-
+    
     function addRemider(Request $request){
        
         $remider = new RemiderTable();
