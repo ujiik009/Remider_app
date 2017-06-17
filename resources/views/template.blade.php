@@ -20,6 +20,7 @@
 	    <ul class="nav navbar-nav">
 	      <li class="active"><a href="{{ url('/') }}">Home</a></li>
 	      <li ><a href="{{ url('/Remider_type') }}">New Remider</a></li>
+	      <li ><a href="{{ url('/RemiderFinish') }}">New Remider</a></li>
 	     
 	    </ul>
 	  </div>

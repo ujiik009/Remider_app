@@ -36,5 +36,10 @@ class RemiderController extends Controller
         $Remider->delete();
         return back();
     }
+
+    function finishRemider(){
+
+        return view('FinishedRemider',['remiders'=>RemiderTable::onlyTrashed()->get()]);
+    }
 }
 
