@@ -23,3 +23,5 @@ Route::delete('/remider/delete', 'RemiderController@deleteRemider');
 Route::post('/Remider_type/new','RemiderTypeController@addRemiderType');
 //show remider finished
 Route::get('/RemiderFinish', 'RemiderController@finishRemider');
+// test 
+Route::resource('/test', 'TestController');
