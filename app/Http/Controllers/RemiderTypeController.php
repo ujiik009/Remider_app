@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\RemiderType;
-//use Illuminate\Contracts\Validation\Validator;
-
 class RemiderTypeController extends Controller
 {
     function showNewRemidertype(){
@@ -15,13 +13,8 @@ class RemiderTypeController extends Controller
     }
 
       function addRemiderType(Request $request){
-        $this->validate($request , [
-            'name' => 'required|unique:remidertype,typeName'
-        ]);
-
-        $typeName = $request->name;
         $type = new RemiderType();
-        $type->typeName = $typeName;
+        $type->typeName = $request->name;
         $type->save();
         return back();
 
