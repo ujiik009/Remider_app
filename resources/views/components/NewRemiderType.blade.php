@@ -13,5 +13,12 @@
   			<input class="btn btn-success" type="submit" value="Create New Remider Type">
   			
   		</div>
+      @if (count($errors) > 0)
+        <ul>
+        @foreach ($errors->all() as $errors)
+          <li>{{ $errors }}</li>
+        @endforeach
+        </ul>
+      @endif
 {{-- {!!Form::close()!!} --}}
   </form>
