@@ -15,6 +15,7 @@ class RemiderTypeController extends Controller
     }
 
       function addRemiderType(Request $request){
+        // chechk duplicate
         $this->validate($request , [
             'name' => 'required|unique:remidertype,typeName'
         ]);
